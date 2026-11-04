@@ -93,6 +93,23 @@ ul {
     font-size: 15px;
 
     display: inline-block;
+    border: 1px solid transparent;
+
+    &:hover {
+        background-color: transparent;
+        color: black;
+        border-color: black;
+    }
+
+    &:active {
+        background-color: var(--color-light-grey);
+        transform: scale(0.9);
+    }
+
+    transition: background-color 300ms, color 300ms, border-color 300px;
+    transform: 300ms;
+    transition-timing-function: cubic-bezier(cubic-bezier(0.47, 0, 0.745, 0.715));
+
 }
 
 .menu-link {
@@ -212,18 +229,27 @@ border-top: 1px solid var(--color-border);
 }
 
 .services__cards {
-display: flex;
-gap: var(--space-md);
-flex-wrap: wrap;
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
 }
 
 .services__card {
-display: flex;
-flex-direction: column;
-gap: var(--space-md);
-background-color: var(--color-light-grey);
-padding: 32px;
-flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    background-color: var(--color-light-grey);
+    padding: 32px;
+    flex: 1 1 300px;
+
+    &:nth-child(even) {
+        background-color: black;
+        color: white;
+
+        & .eyebrow, .small {
+            color: white;
+        }
+    }
 }
 
 .services__text {
